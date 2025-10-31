@@ -4,369 +4,252 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="Ajay Wadekar Sir" />
-  <meta name="description" content="Official site — Ajay Wadekar Sir. Programming tutorials, blog, contact and resources." />
+  <meta name="description" content="Official Website — Ajay Wadekar Sir | Programming Mentor & Educator" />
   <title>Ajay Wadekar Sir</title>
-  <!-- Favicon (SVG data URI) -->
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230b4f6c"/><text x="50" y="58" font-size="40" fill="%23fff" font-family="Arial" font-weight="700" text-anchor="middle">AW</text></svg>' />
 
-  <!-- Basic styling - modern university look -->
   <style>
     :root{
-      --primary:#0b4f6c; /* deep academic blue */
-      --accent:#f6aa1c;  /* warm gold */
+      --primary:#0b4f6c;
+      --accent:#f6aa1c;
       --muted:#f4f6f8;
-      --text:#143642;
-      --white:#ffffff;
-      --maxwidth:1100px;
-      --radius:10px;
+      --white:#fff;
+      --text:#142b3d;
+      --maxwidth:1200px;
     }
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:var(--text); background:var(--white)}
-    a{color:inherit; text-decoration:none}
-    header{background:linear-gradient(90deg,var(--primary), #0e6b83); color:white}
-    .container{max-width:var(--maxwidth); margin:0 auto; padding:1rem}
-    .topbar{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0}
-    .brand{display:flex;align-items:center;gap:.75rem;font-weight:700}
-    .brand .logo{width:48px;height:48px;border-radius:8px;display:grid;place-items:center;background:var(--white);color:var(--primary);font-weight:800}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',Arial,sans-serif;background:var(--white);color:var(--text)}
+    a{text-decoration:none;color:inherit}
 
-    /* Nav */
-    nav{display:flex;gap:1rem;align-items:center}
-    .nav-links{display:flex;gap:.5rem;align-items:center}
-    .nav-item{position:relative}
-    .nav-item button{background:transparent;border:none;color:inherit;padding:.4rem .6rem;border-radius:6px;cursor:pointer}
-    .nav-item button:hover{background:rgba(255,255,255,0.08)}
-    .dropdown{position:absolute;top:calc(100% + .4rem);left:0;background:white;color:var(--text);box-shadow:0 6px 18px rgba(6,30,40,.12);border-radius:8px;padding:.5rem;min-width:160px;display:none}
-    .dropdown a{display:block;padding:.45rem .6rem;border-radius:6px}
-    .dropdown a:hover{background:var(--muted)}
-    .nav-item:hover .dropdown{display:block}
-
-    /* layout */
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:1.25rem;align-items:start;padding:1.25rem 0}
-    .card{background:var(--white);border-radius:var(--radius);box-shadow:0 6px 18px rgba(6,30,40,0.06);padding:1rem}
-
-    /* sidebar */
-    .sidebar{position:sticky;top:1rem}
-    .sidebar .menu{display:flex;flex-direction:column;gap:.4rem}
-    .sidebar a{padding:.6rem .75rem;border-radius:8px}
-    .sidebar a:hover{background:var(--muted)}
-
-    /* blog grid */
-    .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-    .post{display:flex;flex-direction:column;gap:.6rem}
-    .post .thumb{height:140px;border-radius:8px;background:linear-gradient(135deg,#dbeef7,#eaf6f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
-
-    footer{background:#0e2b33;color:#dff1f0;padding:1.25rem}
-    .footer-inner{max-width:var(--maxwidth);margin:0 auto;display:flex;justify-content:space-between;gap:1rem;align-items:center}
-
-    /* marquee */
-    .marquee{background:var(--accent);color:#08323b;padding:.35rem 0;overflow:hidden}
-    .marquee span{display:inline-block;padding-left:100%;animation:marq 14s linear infinite}
-    @keyframes marq{from{transform:translateX(0)} to{transform:translateX(-100%)} }
-
-    /* accordion & tabs */
-    .accordion-item{border-bottom:1px solid #eef2f4;padding:.6rem 0}
-    .accordion-item button{width:100%;text-align:left;background:none;border:none;padding:.6rem 0;font-weight:600;cursor:pointer}
-    .accordion-content{display:none;padding:.25rem 0}
-    .tabs{display:flex;gap:.4rem;border-bottom:1px solid #e6edf0}
-    .tab-btn{padding:.5rem .75rem;cursor:pointer;border-radius:8px 8px 0 0}
-    .tab-btn.active{background:var(--primary);color:white}
-    .tab-panel{padding:1rem}
-
-    /* welcome popup */
-    #welcomeModal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(10,20,28,.45);z-index:120;}
-    #welcomeModal .modal{width:min(680px,94%);background:var(--white);border-radius:12px;padding:1rem}
-
-    /* responsive */
-    @media(max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .blog-grid{grid-template-columns:1fr}
-      nav{display:none}
-      .mobile-nav-toggle{display:block}
+    /* HEADER */
+    header{
+      background:linear-gradient(120deg,var(--primary),#0e6b83);
+      color:var(--white);
+      box-shadow:0 2px 12px rgba(0,0,0,0.1);
     }
+    .header-container{max-width:var(--maxwidth);margin:auto;text-align:center;padding:1rem 0;}
+    .logo-title{display:flex;flex-direction:column;align-items:center;gap:.3rem;}
+    .logo{background:var(--white);color:var(--primary);font-weight:800;border-radius:12px;padding:.5rem 1rem;font-size:1.4rem;}
+    .tagline{font-size:.95rem;color:#d9e9f0;}
 
-    /* mobile nav drawer */
-    .mobile-nav-toggle{display:none;background:transparent;border:0;color:white}
-    .drawer{position:fixed;right:0;top:0;height:100%;width:300px;transform:translateX(100%);background:var(--white);box-shadow:-10px 0 30px rgba(0,0,0,.12);padding:1rem;transition:transform .28s}
-    .drawer.open{transform:translateX(0)}
+    nav{background:#083546;}
+    nav ul{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;padding:.6rem 0;gap:1rem;}
+    nav li{position:relative;}
+    nav a{color:white;font-weight:500;padding:.5rem .8rem;border-radius:6px;transition:.3s;}
+    nav a:hover{background:var(--accent);color:#083546;}
+    nav li ul{display:none;position:absolute;top:100%;left:0;background:white;color:var(--text);min-width:160px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);}
+    nav li:hover ul{display:block;}
+    nav li ul li a{display:block;padding:.5rem .8rem;}
+    nav li ul li a:hover{background:var(--muted);}
 
-    /* small utilities */
-    .muted{color:#637b80;font-size:.95rem}
-    .sml{font-size:.9rem}
-    .btn{background:var(--primary);color:white;padding:.5rem .9rem;border-radius:8px;border:none;cursor:pointer}
+    /* Marquee */
+    .marquee{background:var(--accent);color:#083546;overflow:hidden;white-space:nowrap;}
+    .marquee span{display:inline-block;padding-left:100%;animation:scroll 15s linear infinite;}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)} }
 
+    /* HERO */
+    .hero{max-width:var(--maxwidth);margin:2rem auto;padding:1rem;text-align:center;}
+    .hero h1{font-size:2rem;color:var(--primary);}
+    .hero p{color:#51636b;margin-top:.5rem;}
+
+    /* Accordion */
+    .accordion{max-width:var(--maxwidth);margin:1rem auto;}
+    .accordion-item{border:1px solid #dce3e6;border-radius:8px;margin-bottom:.5rem;}
+    .accordion-item button{width:100%;padding:1rem;text-align:left;background:none;border:none;font-weight:600;font-size:1rem;cursor:pointer;color:var(--primary);}
+    .accordion-content{display:none;padding:1rem;border-top:1px solid #dce3e6;color:#54646e;}
+
+    /* Tabs */
+    .tabs{display:flex;justify-content:center;gap:.5rem;margin:2rem auto 0;max-width:var(--maxwidth);}
+    .tab-btn{padding:.6rem 1rem;background:var(--muted);border-radius:8px;cursor:pointer;}
+    .tab-btn.active{background:var(--primary);color:white;}
+    .tab-panel{display:none;max-width:var(--maxwidth);margin:1rem auto;text-align:center;color:#51636b;}
+
+    /* Blog */
+    .blog-grid{max-width:var(--maxwidth);margin:2rem auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;padding:1rem;}
+    .post{background:var(--white);border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:1rem;transition:.3s;}
+    .post:hover{transform:translateY(-5px);}
+    .thumb{height:140px;border-radius:8px;background:linear-gradient(135deg,#dbeef7,#eaf6f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);margin-bottom:.5rem;}
+
+    /* CONTACT */
+    form{display:grid;gap:.7rem;max-width:600px;margin:2rem auto;}
+    input,textarea{padding:.7rem;border:1px solid #dce3e6;border-radius:8px;}
+    button.btn{background:var(--primary);color:white;border:none;padding:.6rem 1.2rem;border-radius:8px;cursor:pointer;}
+    button.btn:hover{background:#083546;}
+
+    /* FOOTER */
+    footer{background:#0e2b33;color:#dce9ec;padding:2rem 1rem;margin-top:2rem;}
+    .footer-container{max-width:var(--maxwidth);margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
+    footer h4{color:var(--accent);margin-bottom:.6rem;}
+    footer a{color:#cde3e7;display:block;margin:.3rem 0;font-size:.95rem;}
+    footer a:hover{color:white;}
+    .copy{text-align:center;margin-top:1.5rem;font-size:.9rem;color:#9fb5b9;}
+
+    /* Welcome Popup */
+    #welcomeModal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center;z-index:999;}
+    #welcomeModal .modal{background:var(--white);padding:1.5rem;border-radius:10px;max-width:500px;width:90%;text-align:center;box-shadow:0 6px 30px rgba(0,0,0,.2);}
+
+    /* RESPONSIVE NAV */
+    .mobile-toggle{display:none;position:absolute;top:1.2rem;right:1rem;font-size:1.4rem;background:none;border:none;color:white;}
+    @media(max-width:768px){
+      nav ul{flex-direction:column;display:none;}
+      nav.open ul{display:flex;}
+      .mobile-toggle{display:block;}
+    }
   </style>
 </head>
 <body>
 
-  <!-- marquee (news ticker) -->
-  <div class="marquee"><div class="container"><span>Admissions open | New DSA batch starts 1st semester | Contact: 97133XXXXX — Welcome to Ajay Wadekar Sir official page</span></div></div>
+  <div class="marquee"><span>Welcome to Ajay Wadekar Sir Official Website — Learn Programming | Admission Open | Upcoming Workshops & Hackathons!</span></div>
 
   <header>
-    <div class="container topbar">
-      <div class="brand">
+    <div class="header-container">
+      <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+      <div class="logo-title">
         <div class="logo">AW</div>
-        <div>
-          <div style="font-size:1.05rem">Ajay Wadekar Sir</div>
-          <div class="muted sml">Faculty & Programming Mentor</div>
-        </div>
-      </div>
-
-      <div style="display:flex;gap:1rem;align-items:center">
-        <nav id="mainNav">
-          <div class="nav-links">
-            <div class="nav-item"><a href="#home"><button>Home</button></a></div>
-            <div class="nav-item"><a href="#about"><button>About Me</button></a></div>
-            <div class="nav-item">
-              <button>Programming ▾</button>
-              <div class="dropdown" aria-label="Programming dropdown">
-                <a href="#c">C</a>
-                <a href="#cpp">C++</a>
-                <a href="#python">Python</a>
-                <a href="#sql">SQL</a>
-                <a href="#dsa">DSA</a>
-              </div>
-            </div>
-            <div class="nav-item">
-              <button>Links ▾</button>
-              <div class="dropdown">
-                <a href="#resources">Resources</a>
-                <a href="#syllabus">Syllabus</a>
-                <a href="#placements">Placements</a>
-              </div>
-            </div>
-            <div class="nav-item"><a href="#contact"><button>Contact</button></a></div>
-          </div>
-        </nav>
-
-        <button class="mobile-nav-toggle" id="mobileToggle" aria-label="Open menu">☰</button>
+        <h1>Ajay Wadekar Sir</h1>
+        <p class="tagline">Faculty & Programming Mentor</p>
       </div>
     </div>
-
-    <!-- small banner -->
-    <div class="container" style="padding-bottom:1rem">
-      <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:1rem">
-        <div>
-          <h1 style="margin:.1rem 0">Welcome to the Official Page — Ajay Wadekar Sir</h1>
-          <p class="muted">Teaching excellence | Practical programming | Curriculum aligned training</p>
-        </div>
-        <div style="text-align:right">
-          <div class="sml muted">Academic Year 2025</div>
-          <div style="margin-top:.6rem"><a class="btn" href="#contact">Enroll / Contact</a></div>
-        </div>
-      </div>
-    </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#">Programming ▾</a>
+          <ul>
+            <li><a href="#c">C</a></li>
+            <li><a href="#cpp">C++</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#sql">SQL</a></li>
+            <li><a href="#dsa">DSA</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Links ▾</a>
+          <ul>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#syllabus">Syllabus</a></li>
+            <li><a href="#placements">Placements</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
-    <section id="home" class="hero">
-      <div>
-        <div class="card">
-          <h2>About the Program</h2>
-          <p class="muted">A university-style layout with structured resources for undergraduate students. Focus on fundamentals of programming, data structures, databases and practical projects.</p>
+  <section class="hero" id="home">
+    <h1>Welcome to the Official Page — Ajay Wadekar Sir</h1>
+    <p>Empowering Students in Programming, Data Science, and Software Development</p>
+  </section>
 
-          <!-- Accordion -->
-          <div style="margin-top:1rem">
-            <div class="accordion">
-              <div class="accordion-item">
-                <button data-acc="1">Curriculum Overview</button>
-                <div class="accordion-content" id="acc-1">Semester-wise courses, labs, project work, assessments and recommended textbooks.</div>
-              </div>
-              <div class="accordion-item">
-                <button data-acc="2">Assessment & Evaluation</button>
-                <div class="accordion-content" id="acc-2">Continuous evaluation, assignments, midterms, end semester exams and viva based grading.</div>
-              </div>
-              <div class="accordion-item">
-                <button data-acc="3">Admission & Fees</button>
-                <div class="accordion-content" id="acc-3">Admission procedure, essential documents, fee structure and scholarship details.</div>
-              </div>
-            </div>
-          </div>
+  <section class="accordion">
+    <div class="accordion-item">
+      <button data-acc="1">Curriculum Overview</button>
+      <div class="accordion-content" id="acc-1">Detailed semester-wise curriculum including labs, mini-projects, and major projects.</div>
+    </div>
+    <div class="accordion-item">
+      <button data-acc="2">Assessment & Evaluation</button>
+      <div class="accordion-content" id="acc-2">Continuous evaluation, assignments, and viva-based grading system.</div>
+    </div>
+    <div class="accordion-item">
+      <button data-acc="3">Admission & Fees</button>
+      <div class="accordion-content" id="acc-3">Details on eligibility, scholarships, and fee structure.</div>
+    </div>
+  </section>
 
-          <!-- Tabs -->
-          <div style="margin-top:1rem">
-            <div class="tabs">
-              <div class="tab-btn active" data-tab="tab1">News</div>
-              <div class="tab-btn" data-tab="tab2">Events</div>
-              <div class="tab-btn" data-tab="tab3">Notices</div>
-            </div>
-            <div class="tab-panel" id="tab1">Latest: New DSA batch announced. Check the blog for schedule and syllabus.</div>
-            <div class="tab-panel" id="tab2" style="display:none">Upcoming: Guest lecture on Competitive Programming — Date to be announced.</div>
-            <div class="tab-panel" id="tab3" style="display:none">Exam schedule updated. Please contact the office.</div>
-          </div>
+  <div class="tabs">
+    <div class="tab-btn active" data-tab="tab1">News</div>
+    <div class="tab-btn" data-tab="tab2">Events</div>
+    <div class="tab-btn" data-tab="tab3">Notices</div>
+  </div>
+  <div class="tab-panel" id="tab1" style="display:block">New DSA Batch starting soon! Join the community now.</div>
+  <div class="tab-panel" id="tab2">Upcoming Hackathon – Register your team!</div>
+  <div class="tab-panel" id="tab3">Mid-term exams scheduled. Check timetable online.</div>
 
-        </div>
+  <section class="blog-grid">
+    <article class="post">
+      <div class="thumb">C Programming</div>
+      <h3>Pointers Explained</h3>
+      <p>Understand memory management and pointers with live code examples.</p>
+    </article>
+    <article class="post">
+      <div class="thumb">Python</div>
+      <h3>Data Science with Python</h3>
+      <p>Explore Pandas, Matplotlib, and machine learning basics.</p>
+    </article>
+    <article class="post">
+      <div class="thumb">C++</div>
+      <h3>Object-Oriented Concepts</h3>
+      <p>Master inheritance, polymorphism, and templates.</p>
+    </article>
+    <article class="post">
+      <div class="thumb">SQL</div>
+      <h3>Database Management</h3>
+      <p>Learn normalization, joins, and stored procedures.</p>
+    </article>
+  </section>
 
-        <!-- Blog section -->
-        <div style="margin-top:1rem" class="card">
-          <h3>Latest Blog Posts</h3>
-          <div class="blog-grid">
-            <article class="post card">
-              <div class="thumb">C Programming</div>
-              <h4>C: Pointers & Memory</h4>
-              <p class="muted">Understanding pointers with real examples and lab tasks.</p>
-              <a href="#" class="sml">Read more →</a>
-            </article>
-
-            <article class="post card">
-              <div class="thumb">DSA</div>
-              <h4>DSA: Trees & Recursion</h4>
-              <p class="muted">Practice problems, visualizations and sample question papers.</p>
-              <a href="#" class="sml">Read more →</a>
-            </article>
-
-            <article class="post card">
-              <div class="thumb">Python</div>
-              <h4>Python for Data</h4>
-              <p class="muted">Pandas, file I/O and real dataset case study.</p>
-              <a href="#" class="sml">Read more →</a>
-            </article>
-
-            <article class="post card">
-              <div class="thumb">C++</div>
-              <h4>C++: OOP & STL Concepts</h4>
-              <p class="muted">Object-oriented approach and common interview patterns.</p>
-              <a href="#" class="sml">Read more →</a>
-            </article>
-
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="card sidebar">
-          <h4>Quick Links</h4>
-          <nav class="menu">
-            <a href="#about">About</a>
-            <a href="#syllabus">Syllabus</a>
-            <a href="#placements">Placements</a>
-            <a href="#resources">Resources</a>
-            <a href="#contact">Contact</a>
-          </nav>
-
-          <div style="margin-top:1rem">
-            <h4>Contact</h4>
-            <div class="muted sml">Phone: 97133XXXXX</div>
-            <div class="muted sml">Email: ajaywadekar.bgi@gmail.com</div>
-          </div>
-        </div>
-
-        <div style="margin-top:1rem" class="card">
-          <h4>Events</h4>
-          <ul class="muted">
-            <li>Orientation — July 10</li>
-            <li>Workshop: Git & GitHub — Aug 5</li>
-            <li>Hackathon — Oct 8</li>
-          </ul>
-        </div>
-      </aside>
-
-    </section>
-
-    <!-- About section -->
-    <section id="about" style="margin-top:1rem" class="card">
-      <h2>About Me</h2>
-      <p class="muted">Ajay Wadekar Sir has been mentoring students in programming and computer science for many years. The teaching approach focuses on clarity, fundamentals and practical projects that prepare students for industry and higher studies.</p>
-
-      <h3 id="syllabus" style="margin-top:1rem">Syllabus Snapshot</h3>
-      <div class="accordion">
-        <div class="accordion-item"><button data-acc="4">Semester I</button><div class="accordion-content" id="acc-4">C programming basics, discrete math, digital logic</div></div>
-        <div class="accordion-item"><button data-acc="5">Semester II</button><div class="accordion-content" id="acc-5">OOP with C++, Data Structures, Database fundamentals</div></div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" style="margin-top:1rem" class="card">
-      <h2>Contact & Enquiry</h2>
-      <form onsubmit="event.preventDefault(); alert('Thanks! We will contact you shortly.');" style="display:grid;gap:.6rem;max-width:640px">
-        <input type="text" placeholder="Your name" required style="padding:.6rem;border:1px solid #e7eef0;border-radius:8px">
-        <input type="email" placeholder="Email" required style="padding:.6rem;border:1px solid #e7eef0;border-radius:8px">
-        <input type="text" placeholder="Subject" style="padding:.6rem;border:1px solid #e7eef0;border-radius:8px">
-        <textarea placeholder="Message" rows="4" style="padding:.6rem;border:1px solid #e7eef0;border-radius:8px"></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-    </section>
-
-  </main>
+  <section id="contact">
+    <h2 style="text-align:center;color:var(--primary);">Contact</h2>
+    <form onsubmit="event.preventDefault(); alert('Thank you for contacting!');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4"></textarea>
+      <button class="btn">Send</button>
+    </form>
+  </section>
 
   <footer>
-    <div class="footer-inner">
+    <div class="footer-container">
       <div>
-        <div style="font-weight:700">Ajay Wadekar Sir</div>
-        <div class="muted sml">Faculty & Programming Mentor</div>
+        <h4>University Links</h4>
+        <a href="https://www.rgpv.ac.in" target="_blank">RGPV University</a>
+        <a href="https://www.sandipuniversity.edu.in" target="_blank">Sandeep University Nashik</a>
       </div>
-      <div class="muted sml">© <span id="year"></span> Ajay Wadekar Sir — All rights reserved</div>
+      <div>
+        <h4>Coding Resources</h4>
+        <a href="https://www.geeksforgeeks.org" target="_blank">GeeksforGeeks</a>
+        <a href="https://leetcode.com" target="_blank">LeetCode</a>
+        <a href="https://www.hackerrank.com" target="_blank">HackerRank</a>
+        <a href="https://www.codechef.com" target="_blank">CodeChef</a>
+      </div>
+      <div>
+        <h4>Learning Portals</h4>
+        <a href="https://www.w3schools.com" target="_blank">W3Schools</a>
+        <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+      </div>
     </div>
+    <div class="copy">© <span id="year"></span> Ajay Wadekar Sir — All Rights Reserved</div>
   </footer>
 
-  <!-- Mobile drawer -->
-  <div id="drawer" class="drawer" aria-hidden="true">
-    <button onclick="closeDrawer()" style="float:right;border:none;background:none;font-size:1.1rem">✕</button>
-    <nav style="margin-top:1rem;display:flex;flex-direction:column;gap:.6rem">
-      <a href="#home" onclick="closeDrawer()">Home</a>
-      <a href="#about" onclick="closeDrawer()">About Me</a>
-      <details>
-        <summary style="cursor:pointer;padding:.4rem 0">Programming</summary>
-        <a href="#c" onclick="closeDrawer()">C</a>
-        <a href="#cpp" onclick="closeDrawer()">C++</a>
-        <a href="#python" onclick="closeDrawer()">Python</a>
-        <a href="#sql" onclick="closeDrawer()">SQL</a>
-        <a href="#dsa" onclick="closeDrawer()">DSA</a>
-      </details>
-      <a href="#contact" onclick="closeDrawer()">Contact</a>
-    </nav>
-  </div>
-
-  <!-- Welcome Modal -->
-  <div id="welcomeModal" role="dialog" aria-modal="true">
+  <div id="welcomeModal">
     <div class="modal">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <h3>Welcome to Ajay Wadekar Sir Official Page</h3>
-        <button onclick="closeWelcome()" style="background:none;border:none;font-size:1.1rem">✕</button>
-      </div>
-      <p class="muted">Find tutorials, notes, and course materials. Click below to start exploring.</p>
-      <div style="text-align:right;margin-top:1rem"><button class="btn" onclick="closeWelcome()">Get Started</button></div>
+      <h2>Welcome to Ajay Wadekar Sir's Website!</h2>
+      <p>Explore programming tutorials, blogs, and upcoming events.</p>
+      <button class="btn" onclick="closeWelcome()">Continue</button>
     </div>
   </div>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Accordion behavior
-    document.querySelectorAll('[data-acc]').forEach(btn => {
-      btn.addEventListener('click', ()=>{
-        const id = 'acc-' + btn.dataset.acc;
-        const panel = document.getElementById(id);
-        const open = panel.style.display === 'block';
-        document.querySelectorAll('.accordion-content').forEach(p=>p.style.display='none');
-        if(!open) panel.style.display = 'block';
+    document.querySelectorAll('[data-acc]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const id='acc-'+btn.dataset.acc;
+        const content=document.getElementById(id);
+        const open=content.style.display==='block';
+        document.querySelectorAll('.accordion-content').forEach(c=>c.style.display='none');
+        if(!open) content.style.display='block';
       });
     });
-
-    // Tabs
-    document.querySelectorAll('.tab-btn').forEach(b=>{
-      b.addEventListener('click', ()=>{
-        document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
         document.querySelectorAll('.tab-panel').forEach(p=>p.style.display='none');
-        document.getElementById(b.dataset.tab).style.display = 'block';
+        document.getElementById(btn.dataset.tab).style.display='block';
       });
     });
-
-    // Drawer toggle
-    const drawer = document.getElementById('drawer');
-    document.getElementById('mobileToggle').addEventListener('click', ()=>{
-      drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
-    });
-    function closeDrawer(){ drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); }
-
-    // Welcome modal close
-    function closeWelcome(){ document.getElementById('welcomeModal').style.display='none'; }
-    // Auto hide after 6s
-    setTimeout(()=>{ closeWelcome(); }, 6000);
-
+    function toggleMenu(){document.getElementById('navbar').classList.toggle('open');}
+    function closeWelcome(){document.getElementById('welcomeModal').style.display='none';}
+    setTimeout(closeWelcome,6000);
   </script>
 </body>
 </html>
