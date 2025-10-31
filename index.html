@@ -1,255 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Ajay Wadekar Sir" />
-  <meta name="description" content="Official Website — Ajay Wadekar Sir | Programming Mentor & Educator" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of Ajay Wadekar Sir - Learn Programming, C, C++, Python, SQL, DSA, and more.">
   <title>Ajay Wadekar Sir</title>
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230b4f6c"/><text x="50" y="58" font-size="40" fill="%23fff" font-family="Arial" font-weight="700" text-anchor="middle">AW</text></svg>' />
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
-    :root{
-      --primary:#0b4f6c;
-      --accent:#f6aa1c;
-      --muted:#f4f6f8;
-      --white:#fff;
-      --text:#142b3d;
-      --maxwidth:1200px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Poppins',Arial,sans-serif;background:var(--white);color:var(--text)}
-    a{text-decoration:none;color:inherit}
 
-    /* HEADER */
-    header{
-      background:linear-gradient(120deg,var(--primary),#0e6b83);
-      color:var(--white);
-      box-shadow:0 2px 12px rgba(0,0,0,0.1);
+    body {
+      background-color: #fff;
+      color: #333;
+      overflow-x: hidden;
     }
-    .header-container{max-width:var(--maxwidth);margin:auto;text-align:center;padding:1rem 0;}
-    .logo-title{display:flex;flex-direction:column;align-items:center;gap:.3rem;}
-    .logo{background:var(--white);color:var(--primary);font-weight:800;border-radius:12px;padding:.5rem 1rem;font-size:1.4rem;}
-    .tagline{font-size:.95rem;color:#d9e9f0;}
 
-    nav{background:#083546;}
-    nav ul{display:flex;flex-wrap:wrap;justify-content:center;list-style:none;padding:.6rem 0;gap:1rem;}
-    nav li{position:relative;}
-    nav a{color:white;font-weight:500;padding:.5rem .8rem;border-radius:6px;transition:.3s;}
-    nav a:hover{background:var(--accent);color:#083546;}
-    nav li ul{display:none;position:absolute;top:100%;left:0;background:white;color:var(--text);min-width:160px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.1);}
-    nav li:hover ul{display:block;}
-    nav li ul li a{display:block;padding:.5rem .8rem;}
-    nav li ul li a:hover{background:var(--muted);}
+    header {
+      background: linear-gradient(90deg, #0a3d62, #3c6382);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
 
-    /* Marquee */
-    .marquee{background:var(--accent);color:#083546;overflow:hidden;white-space:nowrap;}
-    .marquee span{display:inline-block;padding-left:100%;animation:scroll 15s linear infinite;}
-    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)} }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255,255,255,0.7);
+      animation: float 4s ease-in-out infinite;
+    }
 
-    /* HERO */
-    .hero{max-width:var(--maxwidth);margin:2rem auto;padding:1rem;text-align:center;}
-    .hero h1{font-size:2rem;color:var(--primary);}
-    .hero p{color:#51636b;margin-top:.5rem;}
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-    /* Accordion */
-    .accordion{max-width:var(--maxwidth);margin:1rem auto;}
-    .accordion-item{border:1px solid #dce3e6;border-radius:8px;margin-bottom:.5rem;}
-    .accordion-item button{width:100%;padding:1rem;text-align:left;background:none;border:none;font-weight:600;font-size:1rem;cursor:pointer;color:var(--primary);}
-    .accordion-content{display:none;padding:1rem;border-top:1px solid #dce3e6;color:#54646e;}
+    header h1 {
+      font-size: 2.5em;
+      margin-top: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
 
-    /* Tabs */
-    .tabs{display:flex;justify-content:center;gap:.5rem;margin:2rem auto 0;max-width:var(--maxwidth);}
-    .tab-btn{padding:.6rem 1rem;background:var(--muted);border-radius:8px;cursor:pointer;}
-    .tab-btn.active{background:var(--primary);color:white;}
-    .tab-panel{display:none;max-width:var(--maxwidth);margin:1rem auto;text-align:center;color:#51636b;}
+    header h2 {
+      font-size: 1.2em;
+      margin-top: 8px;
+      color: #f8d90f;
+      animation: blink 1.5s infinite;
+    }
 
-    /* Blog */
-    .blog-grid{max-width:var(--maxwidth);margin:2rem auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;padding:1rem;}
-    .post{background:var(--white);border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:1rem;transition:.3s;}
-    .post:hover{transform:translateY(-5px);}
-    .thumb{height:140px;border-radius:8px;background:linear-gradient(135deg,#dbeef7,#eaf6f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);margin-bottom:.5rem;}
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
 
-    /* CONTACT */
-    form{display:grid;gap:.7rem;max-width:600px;margin:2rem auto;}
-    input,textarea{padding:.7rem;border:1px solid #dce3e6;border-radius:8px;}
-    button.btn{background:var(--primary);color:white;border:none;padding:.6rem 1.2rem;border-radius:8px;cursor:pointer;}
-    button.btn:hover{background:#083546;}
+    nav {
+      background-color: #1e3799;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      transition: all 0.4s ease;
+    }
 
-    /* FOOTER */
-    footer{background:#0e2b33;color:#dce9ec;padding:2rem 1rem;margin-top:2rem;}
-    .footer-container{max-width:var(--maxwidth);margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
-    footer h4{color:var(--accent);margin-bottom:.6rem;}
-    footer a{color:#cde3e7;display:block;margin:.3rem 0;font-size:.95rem;}
-    footer a:hover{color:white;}
-    .copy{text-align:center;margin-top:1.5rem;font-size:.9rem;color:#9fb5b9;}
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-    /* Welcome Popup */
-    #welcomeModal{position:fixed;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center;z-index:999;}
-    #welcomeModal .modal{background:var(--white);padding:1.5rem;border-radius:10px;max-width:500px;width:90%;text-align:center;box-shadow:0 6px 30px rgba(0,0,0,.2);}
+    nav ul li {
+      position: relative;
+    }
 
-    /* RESPONSIVE NAV */
-    .mobile-toggle{display:none;position:absolute;top:1.2rem;right:1rem;font-size:1.4rem;background:none;border:none;color:white;}
-    @media(max-width:768px){
-      nav ul{flex-direction:column;display:none;}
-      nav.open ul{display:flex;}
-      .mobile-toggle{display:block;}
+    nav ul li a {
+      display: block;
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #60a3bc;
+      color: #fff;
+    }
+
+    nav ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0a3d62;
+      display: none;
+      min-width: 180px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li a {
+      color: white;
+      padding: 12px 20px;
+    }
+
+    nav ul li ul li a:hover {
+      background-color: #3c6382;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f5f5f5;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .intro p {
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #333;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    marquee {
+      background: #60a3bc;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0a3d62;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #f8d90f;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        background: #1e3799;
+        color: white;
+        padding: 15px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="marquee"><span>Welcome to Ajay Wadekar Sir Official Website — Learn Programming | Admission Open | Upcoming Workshops & Hackathons!</span></div>
+<header>
+  <img src="https://via.placeholder.com/120" alt="Ajay Wadekar Sir">
+  <h1>Ajay Wadekar Sir</h1>
+  <h2>Innovating Future Coders...</h2>
+</header>
 
-  <header>
-    <div class="header-container">
-      <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
-      <div class="logo-title">
-        <div class="logo">AW</div>
-        <h1>Ajay Wadekar Sir</h1>
-        <p class="tagline">Faculty & Programming Mentor</p>
-      </div>
-    </div>
-    <nav id="navbar">
+<div class="menu-toggle">☰ Menu</div>
+<nav id="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Me</a></li>
+    <li><a href="#">Programming ▾</a>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#">Programming ▾</a>
-          <ul>
-            <li><a href="#c">C</a></li>
-            <li><a href="#cpp">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#sql">SQL</a></li>
-            <li><a href="#dsa">DSA</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Links ▾</a>
-          <ul>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#syllabus">Syllabus</a></li>
-            <li><a href="#placements">Placements</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">C</a></li>
+        <li><a href="#">C++</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">SQL</a></li>
+        <li><a href="#">DSA</a></li>
       </ul>
-    </nav>
-  </header>
+    </li>
+    <li><a href="#">Links ▾</a>
+      <ul>
+        <li><a href="https://www.geeksforgeeks.org">GeeksforGeeks</a></li>
+        <li><a href="https://leetcode.com">LeetCode</a></li>
+        <li><a href="https://www.hackerrank.com">HackerRank</a></li>
+        <li><a href="https://www.w3schools.com">W3Schools</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
-  <section class="hero" id="home">
-    <h1>Welcome to the Official Page — Ajay Wadekar Sir</h1>
-    <p>Empowering Students in Programming, Data Science, and Software Development</p>
-  </section>
+<marquee>Welcome to the Official Website of Ajay Wadekar Sir — Learn Programming and Build Your Future!</marquee>
 
-  <section class="accordion">
-    <div class="accordion-item">
-      <button data-acc="1">Curriculum Overview</button>
-      <div class="accordion-content" id="acc-1">Detailed semester-wise curriculum including labs, mini-projects, and major projects.</div>
-    </div>
-    <div class="accordion-item">
-      <button data-acc="2">Assessment & Evaluation</button>
-      <div class="accordion-content" id="acc-2">Continuous evaluation, assignments, and viva-based grading system.</div>
-    </div>
-    <div class="accordion-item">
-      <button data-acc="3">Admission & Fees</button>
-      <div class="accordion-content" id="acc-3">Details on eligibility, scholarships, and fee structure.</div>
-    </div>
-  </section>
+<section class="intro">
+  <h2>Welcome to My Digital Classroom</h2>
+  <p>Hello! I’m <b>Ajay Wadekar</b>, an educator, technologist, and lifelong learner dedicated to empowering students through innovative programming education. Here you’ll find structured learning paths for C, C++, Python, SQL, and DSA — crafted with clarity, practice, and modern technology trends in mind.</p>
+</section>
 
-  <div class="tabs">
-    <div class="tab-btn active" data-tab="tab1">News</div>
-    <div class="tab-btn" data-tab="tab2">Events</div>
-    <div class="tab-btn" data-tab="tab3">Notices</div>
-  </div>
-  <div class="tab-panel" id="tab1" style="display:block">New DSA Batch starting soon! Join the community now.</div>
-  <div class="tab-panel" id="tab2">Upcoming Hackathon – Register your team!</div>
-  <div class="tab-panel" id="tab3">Mid-term exams scheduled. Check timetable online.</div>
+<footer>
+  <p>Important Links:</p>
+  <p>
+    <a href="https://www.rgpv.ac.in">RGPV University</a> |
+    <a href="https://www.sandipuniversity.edu.in">Sandeep University</a> |
+    <a href="https://www.geeksforgeeks.org">GeeksforGeeks</a> |
+    <a href="https://leetcode.com">LeetCode</a> |
+    <a href="https://www.hackerrank.com">HackerRank</a> |
+    <a href="https://www.codechef.com">CodeChef</a> |
+    <a href="https://www.w3schools.com">W3Schools</a> |
+    <a href="https://stackoverflow.com">Stack Overflow</a>
+  </p>
+  <p style="margin-top:10px;">© 2025 Ajay Wadekar Sir. All Rights Reserved.</p>
+</footer>
 
-  <section class="blog-grid">
-    <article class="post">
-      <div class="thumb">C Programming</div>
-      <h3>Pointers Explained</h3>
-      <p>Understand memory management and pointers with live code examples.</p>
-    </article>
-    <article class="post">
-      <div class="thumb">Python</div>
-      <h3>Data Science with Python</h3>
-      <p>Explore Pandas, Matplotlib, and machine learning basics.</p>
-    </article>
-    <article class="post">
-      <div class="thumb">C++</div>
-      <h3>Object-Oriented Concepts</h3>
-      <p>Master inheritance, polymorphism, and templates.</p>
-    </article>
-    <article class="post">
-      <div class="thumb">SQL</div>
-      <h3>Database Management</h3>
-      <p>Learn normalization, joins, and stored procedures.</p>
-    </article>
-  </section>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('navbar');
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
-  <section id="contact">
-    <h2 style="text-align:center;color:var(--primary);">Contact</h2>
-    <form onsubmit="event.preventDefault(); alert('Thank you for contacting!');">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="4"></textarea>
-      <button class="btn">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <div class="footer-container">
-      <div>
-        <h4>University Links</h4>
-        <a href="https://www.rgpv.ac.in" target="_blank">RGPV University</a>
-        <a href="https://www.sandipuniversity.edu.in" target="_blank">Sandeep University Nashik</a>
-      </div>
-      <div>
-        <h4>Coding Resources</h4>
-        <a href="https://www.geeksforgeeks.org" target="_blank">GeeksforGeeks</a>
-        <a href="https://leetcode.com" target="_blank">LeetCode</a>
-        <a href="https://www.hackerrank.com" target="_blank">HackerRank</a>
-        <a href="https://www.codechef.com" target="_blank">CodeChef</a>
-      </div>
-      <div>
-        <h4>Learning Portals</h4>
-        <a href="https://www.w3schools.com" target="_blank">W3Schools</a>
-        <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
-      </div>
-    </div>
-    <div class="copy">© <span id="year"></span> Ajay Wadekar Sir — All Rights Reserved</div>
-  </footer>
-
-  <div id="welcomeModal">
-    <div class="modal">
-      <h2>Welcome to Ajay Wadekar Sir's Website!</h2>
-      <p>Explore programming tutorials, blogs, and upcoming events.</p>
-      <button class="btn" onclick="closeWelcome()">Continue</button>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelectorAll('[data-acc]').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const id='acc-'+btn.dataset.acc;
-        const content=document.getElementById(id);
-        const open=content.style.display==='block';
-        document.querySelectorAll('.accordion-content').forEach(c=>c.style.display='none');
-        if(!open) content.style.display='block';
-      });
-    });
-    document.querySelectorAll('.tab-btn').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.tab-panel').forEach(p=>p.style.display='none');
-        document.getElementById(btn.dataset.tab).style.display='block';
-      });
-    });
-    function toggleMenu(){document.getElementById('navbar').classList.toggle('open');}
-    function closeWelcome(){document.getElementById('welcomeModal').style.display='none';}
-    setTimeout(closeWelcome,6000);
-  </script>
 </body>
 </html>
