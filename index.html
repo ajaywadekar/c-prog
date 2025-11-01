@@ -3,297 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajay Wadekar Sir</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>C Programming Course Outline</title>
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
-    body {background:#fff; color:#222; overflow-x:hidden;}
-
-    /* HEADER */
-    header {
-      background: linear-gradient(120deg,#002b5b,#004d99,#0066cc);
-      color:white; text-align:center; padding:50px 20px;
-      animation: gradientFlow 6s ease infinite alternate;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background-color: #f7faff;
+      color: #222;
     }
-    @keyframes gradientFlow {
-      0% {background-position:0% 50%;}
-      100% {background-position:100% 50%;}
+    h1 {
+      color: #004080;
+      text-align: center;
     }
-    header img {width:120px;border-radius:50%;box-shadow:0 0 15px rgba(255,255,255,0.7);animation:float 3s ease-in-out infinite;}
-    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-    header h1 {
-      font-size:2.8em;margin-top:15px;
-      background:linear-gradient(90deg,#ffd700,#ffffff);
-      -webkit-background-clip:text;color:transparent;
-      animation:textShine 4s linear infinite;
+    h2 {
+      color: #0066cc;
+      margin-top: 30px;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 5px;
     }
-    @keyframes textShine {from{background-position:0%;}to{background-position:200%;}}
-    header h2 {font-size:1.3em;color:#ffea00;margin-top:8px;animation:blink 1.5s infinite;}
-    @keyframes blink {0%,100%{opacity:1;}50%{opacity:0.3;}}
-
-    /* NAVIGATION */
-    nav {
-      background:#002b5b; display:flex; justify-content:center; flex-wrap:wrap;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    ol {
+      margin-left: 25px;
     }
-    nav ul {list-style:none; display:flex; flex-wrap:wrap;}
-    nav ul li {position:relative;}
-    nav ul li a {
-      display:block;color:white;padding:14px 22px;text-decoration:none;font-weight:500;
-      transition:all 0.3s ease;
+    li {
+      margin-bottom: 6px;
     }
-    nav ul li a:hover {background:#00b4d8;border-radius:4px;}
-    nav ul li ul {
-      position:absolute;top:100%;left:0;background:#004080;display:none;
-      min-width:160px;border-radius:0 0 10px 10px;
+    .trainer-info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
     }
-    nav ul li:hover ul {display:block;}
-    nav ul li ul li a:hover {background:#0077b6;}
-    .menu-toggle {display:none;}
-    @media(max-width:768px){
-      .menu-toggle{display:block;background:#002b5b;color:white;padding:10px;text-align:center;cursor:pointer;}
-      nav ul{flex-direction:column;display:none;width:100%;}
-      nav.active ul{display:flex;}
-    }
-
-    /* SLIDER */
-    .slider {position:relative;overflow:hidden;height:400px;}
-    .slides {display:flex;transition:transform 1s ease;}
-    .slide {
-      min-width:100%;height:400px;background-size:cover;background-position:center;
-      position:relative;color:white;display:flex;align-items:center;justify-content:center;
-      font-size:2em;text-shadow:2px 2px 10px #000;
-    }
-    @keyframes slidefade {from{opacity:0;}to{opacity:1;}}
-
-    /* TABS */
-    .tabs {margin:50px auto;width:90%;max-width:900px;}
-    .tab-buttons {display:flex;justify-content:center;margin-bottom:10px;}
-    .tab-buttons button {
-      padding:10px 20px;margin:0 5px;border:none;background:#004080;color:white;
-      border-radius:5px;cursor:pointer;transition:all 0.3s;
-    }
-    .tab-buttons button.active, .tab-buttons button:hover {background:#0077b6;}
-    .tab-content {display:none;padding:20px;border:1px solid #ddd;border-radius:10px;}
-    .tab-content.active {display:block;animation:fadein 0.6s;}
-    @keyframes fadein {from{opacity:0;}to{opacity:1;}}
-
-    /* ACCORDION */
-    .accordion {width:90%;max-width:900px;margin:40px auto;}
-    .accordion-item {margin-bottom:10px;border-radius:10px;overflow:hidden;border:1px solid #ccc;}
-    .accordion-header {
-      background:#004080;color:white;padding:15px;cursor:pointer;
-      font-weight:600;transition:background 0.3s;
-    }
-    .accordion-header:hover {background:#0077b6;}
-    .accordion-content {display:none;padding:15px;background:#f9f9f9;}
-    .accordion-content.show {display:block;animation:fadein 0.5s;}
-
-    /* TESTIMONIALS */
-    .testimonials {
-      background:#f1f1f1;padding:60px 20px;text-align:center;
-    }
-    .testimonials h2 {color:#003366;margin-bottom:30px;}
-    .testimonial-container {
-      display:flex;flex-wrap:wrap;justify-content:center;gap:20px;
-    }
-    .testimonial {
-      background:white;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.2);
-      padding:20px;width:280px;transition:transform 0.3s;
-    }
-    .testimonial:hover {transform:translateY(-5px);}
-    .testimonial img {
-      width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:10px;
-    }
-
-    /* FOOTER */
     footer {
-      background:#002b5b;color:white;text-align:center;padding:30px 20px;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 15px;
+      color: #444;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
     }
-    footer a {color:#ffd700;text-decoration:none;margin:0 10px;}
-    footer a:hover {text-decoration:underline;}
   </style>
 </head>
 <body>
 
-<header>
-  <img src="https://via.placeholder.com/120" alt="Ajay Wadekar Sir">
-  <h1>Ajay Wadekar Sir</h1>
-  <h2>Empowering Students Through Code ✨</h2>
-</header>
+  <h1>C Programming Course Outline</h1>
 
-<div class="menu-toggle">☰ Menu</div>
-<nav id="navbar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About Me</a></li>
-    <li><a href="#">Programming ▾</a>
-      <ul>
-        <li><a href="cprog/slbs.html">C Notes</a></li><li><a href="#">C++</a></li>
-        <li><a href="#">Python</a></li><li><a href="#">SQL</a></li>
-        <li><a href="#">DSA</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- SLIDER -->
-<section class="slider">
-  <div class="slides" id="slides">
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1350&q=80')">Learn. Code. Grow.</div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&w=1350&q=80')">Transforming Education</div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80')">Building Future Coders</div>
+  <div class="trainer-info">
+    <p><b>Trainer:</b> Ajay Wadekar</p>
+    <p><b>Institute:</b> Bansal Group of Institutions</p>
+    <p><b>Mobile:</b> 9713391500</p>
+    <p><b>Email:</b> ajaywadekar.bgi@gmail.com</p>
   </div>
-</section>
 
-<!-- TABS -->
-<section class="tabs">
-  <div class="tab-buttons">
-    <button class="tab-btn active" data-tab="tab1">Courses</button>
-    <button class="tab-btn" data-tab="tab2">Projects</button>
-    <button class="tab-btn" data-tab="tab3">Achievements</button>
-  </div>
-  <div id="tab1" class="tab-content active">Explore Programming courses like C, C++, Python, SQL, and DSA with real-time examples.</div>
-  <div id="tab2" class="tab-content">Work on AI, ML, Data Science, and Web Development projects guided by Ajay Sir.</div>
-  <div id="tab3" class="tab-content">Recognized educator with 12+ years of excellence in IT and training.</div>
-</section>
+  <h2>Course Content</h2>
+  <ol>
+    <li>Introduction to Computers, Programming Languages, and C Language Overview</li>
+    <li>Structure of a C Program, Compilation Process, and Execution Steps</li>
+    <li>Basic Syntax, Tokens, and Structure of a C Program (main function, header files)</li>
+    <li>Variables, Constants, Data Types, and Type Modifiers in C</li>
+    <li>Input and Output Functions: printf(), scanf(), and format specifiers</li>
+    <li>Operators in C – Arithmetic, Relational, Logical, Assignment, and Increment/Decrement</li>
+    <li>Operators in C – Bitwise, Conditional (?:), sizeof, and Comma Operator</li>
+    <li>Expressions, Operator Precedence, and Associativity</li>
+    <li>Type Casting (Implicit and Explicit) and Escape Sequences</li>
+    <li>Decision Making: Introduction to Control Statements</li>
+    <li>if Statement – Syntax, Flowchart, and Examples</li>
+    <li>if...else Statement – Syntax, Flowchart, and Examples</li>
+    <li>Nested if...else and Ladder if...else – Syntax, Flowchart, and Examples</li>
+    <li>switch Statement – Syntax, Flowchart, and Examples</li>
+    <li>switch vs if...else – Use cases and Best Practices</li>
+    <li>Conditional/Ternary Operator in Decision Making</li>
+    <li>Revision of Decision Making Statements with Practice Problems</li>
+    <li>Introduction to Loops – While, Do-While, and For Loops Overview</li>
+    <li>while Loop – Syntax, Flowchart, and Examples</li>
+    <li>do-while Loop – Syntax, Flowchart, and Examples</li>
+    <li>for Loop – Syntax, Flowchart, and Examples</li>
+    <li>Loop Flow Control – break and continue Statements</li>
+    <li>Nested Loops – Syntax, Flowchart, and Examples</li>
+    <li>Infinite Loops – Causes, Prevention, and Examples</li>
+    <li>Loop Applications – Table Generation, Factorials, Sum of Series</li>
+    <li>Loop Applications – Prime Number Check, Fibonacci Series</li>
+    <li>Loop Optimization – Minimizing Iterations, Best Practices</li>
+    <li>Common Loop Errors and Debugging Techniques</li>
+    <li>Introduction to goto Statement and its Limited Use in Loops</li>
+    <li>Revision of Looping Statements with Practice Problems</li>
+    <li>Mixed Control Structures – Combining Loops and Decision Making</li>
+    <li>Real-world Problem Solving using Loops and Decision Making</li>
+    <li>Lab Exercises – Implementing Practical Problems</li>
+  </ol>
 
-<!-- ACCORDION -->
-<section class="accordion">
-  <div class="accordion-item">
-    <div class="accordion-header">Why choose Ajay Sir?</div>
-    <div class="accordion-content">Because of industry experience, practical examples, and personalized mentorship.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">Do I get notes and assignments?</div>
-    <div class="accordion-content">Yes, each course includes notes, assignments, and project guidance.</div>
-  </div>
-  <div class="accordion-item">
-    <div class="accordion-header">Is there a certificate after completion?</div>
-    <div class="accordion-content">Students receive verified certificates and LinkedIn recommendations.</div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <h2>Student Testimonials</h2>
-  <div class="testimonial-container">
-    <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Student 1">
-      <p>“Ajay Sir’s teaching made coding simple and fun. His real-life examples helped me crack my interviews easily.”</p>
-      <h4>- Priya Sharma</h4>
-    </div>
-    <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Student 2">
-      <p>“Best mentor I’ve ever met. His approach is practical and motivating for beginners.”</p>
-      <h4>- Rahul Singh</h4>
-    </div>
-    <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Student 3">
-      <p>“His Python and DSA sessions are world-class. I built my first project under his guidance.”</p>
-      <h4>- Ankit Verma</h4>
-    </div>
-  </div>
-</section>
-
-  <section class="form-section">
-  <h2 class="form-title">📋 Share Your Feedback</h2>
-  <p class="form-subtitle">Your opinion helps us improve our learning community.</p>
-  
-  <div class="form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_example/viewform?embedded=true"
-            frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </div>
-</section>
-
-<style>
-.form-section {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to bottom right, #ffffff, #e6ecff);
-}
-.form-title {
-  font-size: 2rem;
-  color: #003366;
-  margin-bottom: 10px;
-  animation: fadeInDown 1.5s ease;
-}
-.form-subtitle {
-  color: #555;
-  margin-bottom: 40px;
-}
-.form-container {
-  max-width: 800px;
-  margin: auto;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  animation: zoomIn 1.2s ease;
-}
-.form-container iframe {
-  width: 100%;
-  height: 700px;
-}
-@keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes zoomIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-}
-</style>
-
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Ajay Wadekar Sir | All Rights Reserved</p>
-  <p>
-    <a href="https://www.rgpv.ac.in">RGPV University</a> |
-    <a href="https://www.sandipuniversity.edu.in">Sandeep University</a> |
-    <a href="https://www.geeksforgeeks.org">GeeksforGeeks</a> |
-    <a href="https://leetcode.com">LeetCode</a>
-  </p>
-</footer>
-
-<script>
-  // Mobile Nav
-  const menuToggle=document.querySelector('.menu-toggle');
-  const nav=document.getElementById('navbar');
-  menuToggle.addEventListener('click',()=>nav.classList.toggle('active'));
-
-  // Slider
-  let index=0;
-  const slides=document.getElementById('slides');
-  const total=slides.children.length;
-  setInterval(()=>{
-    index=(index+1)%total;
-    slides.style.transform=`translateX(-${index*100}%)`;
-  },4000);
-
-  // Tabs
-  const tabButtons=document.querySelectorAll('.tab-btn');
-  const tabContents=document.querySelectorAll('.tab-content');
-  tabButtons.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      tabButtons.forEach(b=>b.classList.remove('active'));
-      tabContents.forEach(tc=>tc.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-
-  // Accordion
-  const headers=document.querySelectorAll('.accordion-header');
-  headers.forEach(h=>{
-    h.addEventListener('click',()=>{
-      const content=h.nextElementSibling;
-      content.classList.toggle('show');
-    });
-  });
-</script>
+  <footer>
+    <p>Prepared by Ajay Wadekar | Bansal Group of Institutions</p>
+  </footer>
 
 </body>
 </html>
